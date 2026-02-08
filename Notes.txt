@@ -8,3 +8,14 @@ But in linux, where most of the proc file system data is in string, not in binar
 Some tools that this project tries to simulate:
 htop
 btop
+
+/proc/stat --> Information we will used
+man /proc/stat --> Says what each column is exactly. In case pf having problems doing this command you can do man proc_stat pr man 5 proc_stat.
+
+watch -n1 head 5 /proc/stat --> Rerun every 1 second the comand head 5 /proc/stat
+watch -n1 -d head 5 /proc/stat --> Does the same as before but highlights the diferences
+
+To know the value we will store the value of the data, store it, and then after 1 second get new data,
+after that we will calculate the diference, once we have the difference over a 1 second time scale, then 
+we know the utilization in that last second. If our cpu was on 50% of the time and off 50% of the time, 
+thats 50% CPU utilization.
