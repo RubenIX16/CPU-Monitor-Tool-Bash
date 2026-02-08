@@ -1,0 +1,10 @@
+This project  will only work on linux or on anything that has a sort of linux proc file system.
+For example, MAC doesnt have a proc file system.
+FreeBSD used to have one in the past but no longer has it.
+Alumos has a proc file system but is different, in alumos machines, the proc file system only contains the pids, there is no other stuff like devices, crypto, cpu, etc.
+In Alumo you can still do cat /proc/self/psinfo, but it will come as binary data. And in order to read this binary data we would need to parse it in the kernel.
+But in linux, where most of the proc file system data is in string, not in binary, so we can parse it directly in bash.
+
+Some tools that this project tries to simulate:
+htop
+btop
